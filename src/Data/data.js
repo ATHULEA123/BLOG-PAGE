@@ -19,6 +19,7 @@ const PostData = [
 
 const aboutCard =[
     {
+        _id:"1",
         image:"https://www.w3schools.com/w3images/avatar_g.jpg",
         Title:"My Name", 
      
@@ -28,21 +29,25 @@ const aboutCard =[
 
 const popularPost = [
     {
+        _id:"1",
         image:"https://www.w3schools.com/w3images/workshop.jpg",
         Title:"Lorem",
         Content:"Sed mattis nunc"
     },
     {
+        _id:"2",
         image:"https://www.w3schools.com/w3images/gondol.jpg",
         Title:"Ipsum",
         Content:"Praes tinci sed"
     },
     {
+        _id:"3",
         image:"https://www.w3schools.com/w3images/skies.jpg",
         Title:"Dorum",
         Content:"Ultricies congue"
     },
     {
+        _id:"4",
         image:"https://www.w3schools.com/w3images/rock.jpg",
         Title:"Mingsum",
         Content:"Ultricies congue"
@@ -50,18 +55,21 @@ const popularPost = [
     
 ]
 
-const Tags = [
+// const Tags = [
     
-    "New York",
-    "London",
-    " IKEA" ,
-    " NORWAY",
-    " DIYIdeas ",
-    "Baby",
-    "FamilyNews",
-    "Clothing ",
-    "ShoppingSports",
-    "Games"
+//     "New York",
+//     "London",
+//     " IKEA" ,
+//     " NORWAY",
+//     " DIYIdeas ",
+//     "Baby",
+//     "FamilyNews",
+//     "Clothing ",
+//     "ShoppingSports",
+//     "Games"
     
-]
-export {PostData,aboutCard,popularPost,Tags}
+// ]
+ export {popularPost}
+
+
+

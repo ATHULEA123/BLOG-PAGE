@@ -6,7 +6,7 @@ const Popularlist = (props) => {
         
               <li className="w3-padding-16">
                 <img
-                  src={props.image}
+                  src= {props.image}
                   alt="Image"
                   className="w3-left w3-margin-right"
                   style={{ width: 50 }}

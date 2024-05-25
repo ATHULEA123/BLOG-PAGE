@@ -9,7 +9,7 @@ const PopularPost = () => {
               <h4>Popular Posts</h4>
             </div>
             <ul className="w3-ul w3-hoverable w3-white">
-            {popularPost.map((data)=>(<Popularlist {...data}/>))}
+            {popularPost.map((data)=>(<Popularlist key={data._id} {...data}/>))}
             </ul>
           </div>
           <hr />

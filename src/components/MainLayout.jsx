@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Blogentry from "./Blogentry";
 import AboutCard from "./AboutCard";
 import PopularPost from "./PopularPost";
 import Label from "./Label";
-import { PostData,aboutCard,popularPost} from "../Data/data";
+// import {PostData} from "../Data/data";
 
 const MainLayout = () => {
+
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/blogs");
+        setBlogs(response.data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <>
       <div className="w3-row">
         {/* Blog entries */}
         <div className="w3-col l8 s12">
           {/* Blog entry */}
-          {PostData.map((data)=>( <Blogentry {...data}/>))}
+          {blogs.map((blogs)=>( <Blogentry key = {blogs._id}{...blogs}/>))}
        
           {/* Blog entry */}
          
@@ -21,7 +38,7 @@ const MainLayout = () => {
         {/* Introduction menu */}
         <div className="w3-col l4">
           {/* About Card */}
-         {aboutCard.map((data)=>(<AboutCard {...data}/>))}
+         <AboutCard/>
           {/* Posts */}
           <PopularPost/>
           {/* Labels / tags */}
