@@ -4,7 +4,8 @@ import React from 'react'
 
 const Label = () => {
   return (
-    <> <div className="w3-card w3-margin">
+    <> 
+    <div className="w3-card w3-margin">
     <div className="w3-container w3-padding">
       <h4>Tags</h4>
       

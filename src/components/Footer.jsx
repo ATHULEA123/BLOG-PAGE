@@ -7,7 +7,7 @@ const Footer = () => {
       Previous
     </button>
     <button className="w3-button w3-black w3-padding-large w3-margin-bottom">
-      Next »
+      <a href=" http://localhost:3000/Dashboard"> Next » </a>
     </button>
     <p>
       Powered by{" "}

@@ -4,8 +4,8 @@
     margin-left: 90px;
     /* height: 100vh; */
     background: linear-gradient(#ece6e6) padding-box,
-                linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
-    border: 2px solid transparent;
+                linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box ;
+    border: 2px solid black;
     padding: 32px 24px;
     font-size: 14px;
     font-family: inherit;
@@ -94,9 +94,9 @@
   
   .form-container .form-submit-btn {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    align-self: flex-start;
+    align-self: center;
     font-family: inherit;
     color: #717171;
     font-weight: 600;
@@ -119,5 +119,11 @@
     width: 100%;
   }
    
+  .enter{
+    color: black;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  }
   
   

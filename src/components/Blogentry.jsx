@@ -1,9 +1,13 @@
+import React, { useState } from "react";
+import moment from "moment";
 
-import React, { useState } from 'react';
-import moment from "moment"
+const Blogentry = ({ title, image, description, createdAt }) => {
+  const formattedDate = new Date(createdAt).toLocaleString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
-const Blogentry = (props) => {
-  
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleReadMore = () => {
@@ -11,38 +15,50 @@ const Blogentry = (props) => {
   };
 
   const getDisplayContent = () => {
-    const words = props.description.split(' ');
+    const words = description.split(" ");
     if (isExpanded || words.length <= 30) {
-      return props.description;
+      return description;
     }
-    return words.slice(0, 30).join(' ') + '...';
+    return words.slice(0, 30).join(" ") + "...";
   };
-    const currentDate = moment().format('MMMM D, YYYY');
-    
 
   return (
     <>
       <div className="w3-card-4 w3-margin w3-white">
-        <img src={props.image} alt="Nature" style={{ width: "100%" }} />
+        <img
+          src={
+            image ||
+            "https://us.123rf.com/450wm/shendart/shendart1805/shendart180500040/102142631-flat-pictures-icon-in-flat-stule-with-shadow-isolated-on-blue-background-mountains-and-sun-on-paper.jpg"
+          }
+          alt="Nature"
+          style={{ width: "100%", height: "380px" }}
+        />
         <div className="w3-container">
-          <h3><b>{props.title}</b></h3>
-          <h5>TITLE DESCRIPTIONN{"   "}<span className="w3-opacity">{"   "}{currentDate}</span></h5>
+          <h3>
+            <b>{title || "TITILE DESCRIPTIION"}</b>
+          </h3>
+          <h5>
+            BLOG CREATED AT{"   "}
+            <span className="w3-opacity">{"   "}</span>
+            {formattedDate}
+          </h5>
         </div>
         <div className="w3-container">
-          <p>{getDisplayContent()}</p>
+          <p>{getDisplayContent() || "Add content"}</p>
           <div className="w3-row">
             <div className="w3-col m8 s12">
-              {props.description.split(' ').length > 30 && (
+              {description.split(" ").length > 30 && (
                 <p>
-                  <button 
-                    className="w3-button w3-padding-large w3-white w3-border" 
-                    onClick={toggleReadMore}>
-                    <b>{isExpanded ? 'SHOW LESS' : 'READ MORE »'}</b>
+                  <button
+                    className="w3-button w3-padding-large w3-white w3-border"
+                    onClick={toggleReadMore}
+                  >
+                    <b>{isExpanded ? "SHOW LESS" : "READ MORE"}</b>
                   </button>
                 </p>
               )}
             </div>
-            <div className="w3-col m4 w3-hide-small comment">
+            <div className="w3-col m4 w3-hide-small comment  ">
               <p>
                 <span className="w3-padding-large w3-right">
                   <b>Comments &nbsp;</b> <span className="w3-tag">0</span>

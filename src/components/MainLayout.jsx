@@ -7,7 +7,6 @@ import Label from "./Label";
 // import {PostData} from "../Data/data";
 
 const MainLayout = () => {
-
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -26,30 +25,22 @@ const MainLayout = () => {
   return (
     <>
       <div className="w3-row">
-        {/* Blog entries */}
         <div className="w3-col l8 s12">
           {/* Blog entry */}
-          {blogs.map((blogs)=>( <Blogentry key = {blogs._id}{...blogs}/>))}
-       
-          {/* Blog entry */}
-         
-          {/* END BLOG ENTRIES */}
+          {blogs.map((blogs) => (
+            <Blogentry key={blogs._id} {...blogs} />
+          ))}
         </div>
-        {/* Introduction menu */}
+
         <div className="w3-col l4">
-          {/* About Card */}
-         <AboutCard/>
-          {/* Posts */}
-          <PopularPost/>
-          {/* Labels / tags */}
-         <Label/>
-          
-          {/* END Introduction Menu */}
+          <AboutCard />
+
+          <PopularPost />
+
+          <Label />
         </div>
-        {/* END GRID */}
       </div>
       <br />
-      {/* END w3-content */}
     </>
   );
 };

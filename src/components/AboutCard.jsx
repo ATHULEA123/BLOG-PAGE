@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const AboutCard = (props) => {
+const AboutCard = () => {
   return (
     <>
          <div className="w3-card w3-margin w3-margin-top">
